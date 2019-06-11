@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ExpandableViewExemplo"
+             x:Class="ExpandableViewExemplo.MainPage" 
+             Padding="0,40,0,0"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView">
+ <StackLayout>
+
+ <expandable:ExpandableView x:Name="expView" BackgroundColor="Red" 
+                          
+                            StatusChanged="Handle_StatusChanged">
+        <expandable:ExpandableView.PrimaryView >
+             <StackLayout Padding="60,0">
+                  <Label Text="Toque para expandir!" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="CenterAndExpand" />       
+             </StackLayout>
+        </expandable:ExpandableView.PrimaryView>
+        <expandable:ExpandableView.SecondaryViewTemplate>
+            <DataTemplate>
+               <StackLayout Padding="60,0">
+              <Label Text="Fecha!!!!" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="CenterAndExpand" />     
+             </StackLayout>
+            </DataTemplate>
+        </expandable:ExpandableView.SecondaryViewTemplate>
+    </expandable:ExpandableView>
+    <Label x:Name="lblStatus" 
+          />    
+    </StackLayout>
+</ContentPage>
